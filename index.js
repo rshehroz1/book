@@ -11,12 +11,18 @@ app.engine("hbs", hbs.engine)
 app.set("view engine", "hbs")
 app.set("views", "views")
 
+app.use(express.static("public"))
+
 app.get("/", (req, res)=>{
-    res.render("index")
+    res.render("index", {title: "Main page", isHome: true})
 })
 
-app.get("/about", (req, res) =>{
-    res.render("about")
+app.get("/books", (req, res) =>{
+    res.render("books", {title: "Books", isBooks: true})
+})
+
+app.get("/add", (req, res)=>{
+    res.render("add", {title: "Add books", isAdd: true})
 })
 
 const PORT = process.env.PORT || 3000

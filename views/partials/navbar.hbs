@@ -1,0 +1,24 @@
+<nav>
+    <div class="nav-wrapper #263238 blue-grey darken-4">
+      <a href="#" class="brand-logo">Book Shop</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {{#if isHome}}
+        <li class="active"><a href="/">Home</a></li>
+        {{else}}
+        <li><a href="/">Home</a></li>
+        {{/if}}
+
+        {{#if isBooks}}
+        <li class="active"><a href="/books">Book</a></li>
+        {{else}}
+        <li><a href="/books">Book</a></li>
+        {{/if}}
+
+        {{#if isAdd}}
+        <li class="active"><a href="/add">Add Book</a></li>
+        {{else}}
+        {{/if}}
+        <li><a href="/add">Add Book</a></li>
+      </ul>
+    </div>
+  </nav>
