@@ -1,16 +1,19 @@
-<h1>Add new books</h1>
-<form action="/add" method="POST">
+<h3 class="center">Add new books</h3>
+<form action="/add" method="POST" class="z-depth-4 f_control">
     <div class="input-field">
-      <input id="title" type="text" class="validate">
+      <input id="title" type="text" class="validate" required>
       <label for="title">Books model</label>
+      <span class="helper-text" data-error="Enter Books name"></span>
     </div>
     <div class="input-field">
-      <input id="price" type="number" class="validate">
+      <input id="price" type="number" class="validate" required>
       <label for="price">Price</label>
+      <span class="helper-text" data-error="Enter price"></span>
     </div>
     <div class="input-field">
-      <input id="img" type="text" class="validate">
+      <input id="img" type="text" class="validate" required>
       <label for="img">Url image</label>
+      <span class="helper-text" data-error="Enter Url image"></span>
     </div>
     <button class="btn #263238 blue-grey darken-4">Add books</button>
 </form>
