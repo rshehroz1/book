@@ -1,5 +1,4 @@
 const { Router } = require("express")
-const Books = require("../models/books")
 const router = Router()
 
 router.get("/", (req, res)=>{
@@ -7,7 +6,6 @@ router.get("/", (req, res)=>{
 })
 
 router.post("/", (req, res)=>{
-    const books = new Books
     res.redirect("/books")
 })
 
