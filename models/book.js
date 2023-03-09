@@ -1,18 +1,29 @@
-const uuid = require("uuid/dist/v4")
+const { v4: uuidv4 } = require("uuid")
 const fs = require("fs")
 const path = require("path")
-const { resolve } = require("path")
+
 
 class Book{
     constructor(title, price, img){
         this.title = title,
         this.price = price,
         this.img = img,
-        this.id = uuid()
+        this.id = uuidv4()
+    }
+
+    toJSON(){
+        return JSON.stringify({
+            title: this.title,
+            price: this.price,
+            img: this.img,
+            id: this.id,
+        })
     }
 
     async save(){
         const books = await Book.getAll()
+        books.push(this.toJSON())
+        console.log("book", books);
         // do something with books here
     }
 
