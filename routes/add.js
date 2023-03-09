@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
     req.body.img,
     req.body.descr
   );
-  book.save();
+  await book.save();
   res.redirect("/books");
 });
 

@@ -23,8 +23,21 @@ class Book{
     async save(){
         const books = await Book.getAll()
         books.push(this.toJSON())
-        console.log("book", books);
-        // do something with books here
+
+        return new Promise((resolve, reject)=>{
+            fs.writeFile(
+                path.join(__dirname, "..", "data", "books.json"),
+                JSON.stringify(books),
+                (err) => {
+                    if(err) {
+                        reject(err)
+                    }else{
+                        resolve( )
+                    }
+                }
+            )
+        })
+
     }
 
     static getAll(){
