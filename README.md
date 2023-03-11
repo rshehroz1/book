@@ -1,4 +1,4 @@
-# Book shop
+# Books shop
 ```
 npm install 
 ```
